@@ -1,0 +1,9 @@
+{
+  "category": [
+    { "id": 1, "name": "residence" },
+    { "id": 123, "name": "interior" },
+    { "id": 321, "name": "anything" },
+    { "id": 51, "name": "housing" },
+    { "id": 64, "name": "commercial" }
+  ]
+}
