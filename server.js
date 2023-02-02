@@ -13,7 +13,7 @@ const jsonServer = require('json-server')
 const app = express()
 const port = process.env.PORT || 8000
 
-const jsonProject = jsonServer.router('./data/project.json')
+const jsonProject = jsonServer.router('./tmp/projects.json')
 
 app.use(cors())
 app.use(express.json())
@@ -26,6 +26,7 @@ app.use((req, res, next) => {
 
 app.use('/api/category',categoryRouter)
 app.use('/api/project',projectRouter) 
+app.use('/api/project1',jsonProject)
 
 // "63d281d9e809dd54b0c4b9be"
 
@@ -42,7 +43,6 @@ app.use(function(req, res, next) {
 app.use('/api/imagekit',imagesRouter)
 
  
-app.use('/api/project1',jsonProject)
 
 
 app.listen(port, ()=>console.log(`listening on port ${port}`)
