@@ -6,7 +6,6 @@ require('dotenv').config('./config/.env')
 const cors = require('cors')
 const jsonServer = require('json-server')
 
-const server = jsonServer.create()
 const router = jsonServer.router( 'db.json')
 const middlewares = jsonServer.defaults()
 
@@ -19,8 +18,10 @@ const port = process.env.PORT || 8000
 
 app.use(cors())
 app.use(express.json())
-server.use(middlewares)
-server.use(router)
+app.use(middlewares)
+
+// JSON server
+app.use(router)
 
 
 app.use((req, res, next) => {
