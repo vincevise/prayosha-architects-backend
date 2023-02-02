@@ -1,8 +1,30 @@
 {
+  "category": [
+    {
+      "id": 1,
+      "name": "residence"
+    },
+    {
+      "id": 123,
+      "name": "interior"
+    },
+    {
+      "id": 321,
+      "name": "everything"
+    },
+    {
+      "id": 51,
+      "name": "housing"
+    },
+    {
+      "id": 64,
+      "name": "commercial"
+    }
+  ],
   "project": [
     {
       "id": "4d333c30-8266-4e62-9574-5fc06912b83a",
-      "name": "Housing-2",
+      "name": "BhavyaRaj",
       "location": "Surat",
       "area": "10000",
       "date": "2023-01-10",

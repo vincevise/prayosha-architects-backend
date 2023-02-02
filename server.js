@@ -18,8 +18,7 @@ app.use(cors())
 app.use(express.json())
 app.use(middlewares)
 
-// JSON server
-app.use(router)
+
 
 
 app.use((req, res, next) => {
@@ -45,6 +44,8 @@ app.use(function(req, res, next) {
 
 app.use('/api/imagekit',imagesRouter)
 
+// JSON server
+app.use('/api/v3',router)
  
 
 

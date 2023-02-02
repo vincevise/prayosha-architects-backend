@@ -1,9 +1,10 @@
 const { categoryRouter } = require('../router/categoryRouter')
 const ImageKit = require('imagekit')
 const fs = require('fs').promises
-const fileName = '../tmp/projects.json'
-const projectData = require(fileName)
-const categoryData = require("../tmp/category.json");
+// const fileName = '../tmp/projects.json'
+// const projectData = require(fileName)
+// const categoryData = require("../tmp/category.json");
+const {category,project} = require('../db.json')
 
 // below is the path for fs module to read
 const projectPath = './tmp/projects.json'
@@ -16,26 +17,26 @@ var imagekit = new ImageKit({
 
 
 // CREATE
-const creatProject = async(req,res) => {
-    const newProject = req.body
-    try {
-        // if(projectData.project.find((x)=>x.name==newProject.name))return res.status(400).json({error:'project with this name already exists'})
+// const creatProject = async(req,res) => {
+//     const newProject = req.body
+//     try {
+//         // if(projectData.project.find((x)=>x.name==newProject.name))return res.status(400).json({error:'project with this name already exists'})
 
-        projectData.project.push(newProject)
+//         projectData.project.push(newProject)
 
-        await fs.writeFile(projectPath,JSON.stringify(projectData))
+//         await fs.writeFile(projectPath,JSON.stringify(projectData))
 
-        res.status(200).json(projectData)
-    } catch (error) {
-        console.error(error.message)
-        res.status(400).json({error:error.message})
-    }
-}
+//         res.status(200).json(projectData)
+//     } catch (error) {
+//         console.error(error.message)
+//         res.status(400).json({error:error.message})
+//     }
+// }
 
 // READ
 const getProjects = async(req,res) =>{
     try{
-        res.status(200).json(projectData)
+        res.status(200).json(project)
     }catch(error){
         console.error(error.message,'get projects')
         res.status(400).json({error:error.message})
@@ -46,11 +47,11 @@ const getCategoryProject = async(req,res) =>{
     const {id} = req.params
     
     try {
-        if(id==='all') return res.status(200).json(projectData.project)
-        const category = categoryData.category.find((x)=>x.name === id)
-        if(!category) return res.status(400).json({error:'no such category exist'})
+        if(id==='all') return res.status(200).json(project)
+        const categoryProjects = category.find((x)=>x.name === id)
+        if(!categoryProjects) return res.status(400).json({error:'no such category exist'})
 
-        const data = projectData.project?.filter((x)=>x.type===id)
+        const data = project?.filter((x)=>x.type===id)
         res.status(200).json(data)
     } catch (error) {
         console.error(error.message)
@@ -61,11 +62,7 @@ const getCategoryProject = async(req,res) =>{
 // GET ONE
 const getProject = async(req,res) =>{
     const {id} = req.params
-    const {project} = projectData
     try {
-
-        
-
          const data = project.find((x)=>x.id==id)
          if(!data) return res.status(400).json({error:'no such project'})
         res.status(200).json(data)
@@ -78,42 +75,49 @@ const getProject = async(req,res) =>{
 
 
 // PUT
-const updateProject = async(req,res) =>{
-    const { id } = req.params
-    const {project} = projectData
-    const changedData = req.body
-    try {
-        if(!project.find((x)=>x.id == id ))return res.status(400).json({error:'project eith this id does not exist'})
+// const updateProject = async(req,res) =>{
+//     const { id } = req.params
+//     const {project} = projectData
+//     const changedData = req.body
+//     try {
+//         if(!project.find((x)=>x.id == id ))return res.status(400).json({error:'project eith this id does not exist'})
         
-        const newData = {project:[...project.filter((x)=>x.id!=id),changedData ]}
+//         const newData = {project:[...project.filter((x)=>x.id!=id),changedData ]}
 
-        await fs.writeFile(projectPath,JSON.stringify(newData))
+//         await fs.writeFile(projectPath,JSON.stringify(newData))
         
-        res.status(200).json(newData)
+//         res.status(200).json(newData)
 
-    } catch (error) {
-        console.error(error.message)
-        res.status(400).json({error:error.message})
-    }
-}
+//     } catch (error) {
+//         console.error(error.message)
+//         res.status(400).json({error:error.message})
+//     }
+// }
 
 // DELETE
-const deleteProject = async(req,res) =>{
-    const {id} = req.params
-    const {project} = projectData
-    try {
-        if(!project.find((x)=>x.id == id ))return res.status(400).json({error:'project eith this id does not exist'})
+// const deleteProject = async(req,res) =>{
+//     const {id} = req.params
+//     const {project} = projectData
+//     try {
+//         if(!project.find((x)=>x.id == id ))return res.status(400).json({error:'project eith this id does not exist'})
 
-        const newData = {project:[...project.filter((x)=>x.id!=id)]}
+//         const newData = {project:[...project.filter((x)=>x.id!=id)]}
 
-        await fs.writeFile(projectPath,JSON.stringify(newData))
+//         await fs.writeFile(projectPath,JSON.stringify(newData))
         
-        res.status(200).json(newData)
+//         res.status(200).json(newData)
 
-    } catch (error) {
-        console.error(error.message)
-        res.status(400).json({error:error.message})
-    }
+//     } catch (error) {
+//         console.error(error.message)
+//         res.status(400).json({error:error.message})
+//     }
+// }
+
+module.exports = {
+    // creatProject,
+    getProjects,
+    // updateProject,
+    // deleteProject,
+    getProject,
+    getCategoryProject
 }
-
-module.exports = {creatProject,getProjects,updateProject,deleteProject,getProject,getCategoryProject}
