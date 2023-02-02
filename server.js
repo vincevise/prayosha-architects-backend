@@ -6,6 +6,9 @@ require('dotenv').config('./config/.env')
 const cors = require('cors')
 const jsonServer = require('json-server')
 
+const server = jsonServer.create()
+const router = jsonServer.router( 'db.json')
+const middlewares = jsonServer.defaults()
 
  
 
@@ -13,10 +16,12 @@ const jsonServer = require('json-server')
 const app = express()
 const port = process.env.PORT || 8000
 
-const jsonProject = jsonServer.router('db.json')
 
 app.use(cors())
 app.use(express.json())
+server.use(middlewares)
+server.use(router)
+
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Credentials", "true");
@@ -26,7 +31,6 @@ app.use((req, res, next) => {
 
 app.use('/api/category',categoryRouter)
 app.use('/api/project',projectRouter) 
-app.use('/api/project1',jsonProject)
 
 // "63d281d9e809dd54b0c4b9be"
 
