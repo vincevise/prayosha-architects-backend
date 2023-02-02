@@ -4,6 +4,7 @@ const { projectRouter } = require('./router/projectsRouter')
 const { imagesRouter } = require('./router/imagesRouter')
 require('dotenv').config('./config/.env')
 const cors = require('cors')
+const jsonServer = require('json-server')
 
 
  
@@ -11,6 +12,8 @@ const cors = require('cors')
 
 const app = express()
 const port = process.env.PORT || 8000
+
+const jsonProject = jsonServer.router('./data/project.json')
 
 app.use(cors())
 app.use(express.json())
@@ -39,7 +42,7 @@ app.use(function(req, res, next) {
 app.use('/api/imagekit',imagesRouter)
 
  
-
+app.use('/api/project1',jsonProject)
 
 
 app.listen(port, ()=>console.log(`listening on port ${port}`)
