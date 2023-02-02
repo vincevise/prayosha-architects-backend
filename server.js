@@ -13,7 +13,7 @@ const jsonServer = require('json-server')
 const app = express()
 const port = process.env.PORT || 8000
 
-const jsonProject = jsonServer.router('./tmp/projects.json')
+const jsonProject = jsonServer.router('projects.json')
 
 app.use(cors())
 app.use(express.json())
