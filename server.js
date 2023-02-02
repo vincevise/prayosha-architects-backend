@@ -10,8 +10,6 @@ const router = jsonServer.router( 'db.json')
 const middlewares = jsonServer.defaults()
 
  
-
-
 const app = express()
 const port = process.env.PORT || 8000
 
