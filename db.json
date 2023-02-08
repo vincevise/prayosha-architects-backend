@@ -55,7 +55,7 @@
     },
     {
       "id": "db3c40b3-5c3a-4dd7-9305-f0ba120d026a",
-      "name": "Residence-2",
+      "name": "Felix",
       "location": "Surat",
       "area": "10000",
       "date": "2023-01-01",
@@ -186,37 +186,6 @@
       "type": "residence"
     },
     {
-      "id": "f1ca7174-0a8a-49c0-9402-db4dbf6d4e95",
-      "name": "House83",
-      "location": "Surat",
-      "area": "8030",
-      "date": "",
-      "description": "",
-      "poster": {
-        "fileId": "63d4e816e809dd54b02506df",
-        "url": "https://ik.imagekit.io/nycs0udgn/abc_m6LojIqg4M.jpg"
-      },
-      "thumbnail": {
-        "fileId": "63d4e81fe809dd54b0250eac",
-        "url": "https://ik.imagekit.io/nycs0udgn/abc_n4fPp2nCc.jpg"
-      },
-      "gallery": [
-        {
-          "fileId": "63d4e83de809dd54b0252bfe",
-          "url": "https://ik.imagekit.io/nycs0udgn/abc_n3slQamdt.jpg"
-        },
-        {
-          "fileId": "63d4e845e809dd54b02531be",
-          "url": "https://ik.imagekit.io/nycs0udgn/abc_TKH5uOiM2.jpg"
-        },
-        {
-          "fileId": "63d4e84be809dd54b0253665",
-          "url": "https://ik.imagekit.io/nycs0udgn/abc_hYux_1DgD.jpg"
-        }
-      ],
-      "type": "residence"
-    },
-    {
       "id": "666ffc29-ead7-485a-92cb-b5586b836106",
       "name": "Residence-1",
       "location": "Surat",
@@ -250,6 +219,67 @@
         }
       ],
       "type": "residence"
+    },
+    {
+      "id": "b4b4757a-ca77-4226-a086-905a044c0061",
+      "name": "Residence-4",
+      "location": "Surat",
+      "area": "2387",
+      "date": "2023-02-16",
+      "description": "",
+      "poster": {
+        "fileId": "63de6ab9e809dd54b0a578bf",
+        "url": "https://ik.imagekit.io/nycs0udgn/abc_Q6OKqpflN.jpg"
+      },
+      "thumbnail": {
+        "fileId": "63de6ac0e809dd54b0a58ee6",
+        "url": "https://ik.imagekit.io/nycs0udgn/abc_SzJCif-V_.jpg"
+      },
+      "gallery": [
+        {
+          "fileId": "63de6ad9e809dd54b0a61a06",
+          "url": "https://ik.imagekit.io/nycs0udgn/abc_7QQFOVwr1.jpg"
+        },
+        {
+          "fileId": "63de6adee809dd54b0a632fd",
+          "url": "https://ik.imagekit.io/nycs0udgn/abc_SC_9avsFK.jpg"
+        },
+        {
+          "fileId": "63de6ae3e809dd54b0a64e33",
+          "url": "https://ik.imagekit.io/nycs0udgn/abc_6H9T5IhsO.jpg"
+        },
+        {
+          "fileId": "63de6ae7e809dd54b0a67075",
+          "url": "https://ik.imagekit.io/nycs0udgn/abc_EZB9BvI_D.jpg"
+        }
+      ],
+      "type": "residence"
+    },
+    {
+      "id": "20f3db87-2850-4967-a832-b736dfb62141",
+      "name": "fbddf",
+      "location": "",
+      "area": "",
+      "date": "",
+      "description": "",
+      "poster": {
+        "fileId": "63de6e4ce809dd54b0b2ecc8",
+        "url": "https://ik.imagekit.io/nycs0udgn/abc_TrWlPEmt1.jpg"
+      },
+      "thumbnail": {
+        "fileId": "63de6e51e809dd54b0b30514",
+        "url": "https://ik.imagekit.io/nycs0udgn/abc_zwBeyt3YE.jpg"
+      },
+      "gallery": [
+        {
+          "fileId": "63de6e58e809dd54b0b32f04",
+          "url": "https://ik.imagekit.io/nycs0udgn/abc_VwOXD0eW7.jpg"
+        },
+        {
+          "fileId": "63de6e5fe809dd54b0b358d7",
+          "url": "https://ik.imagekit.io/nycs0udgn/abc_YeJwowQIs.jpg"
+        }
+      ]
     }
   ]
 }
